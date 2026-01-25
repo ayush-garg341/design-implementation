@@ -37,7 +37,7 @@ async def main():
     """
 
     # Set global timeout for requests, all requests should finish in this 30 seconds
-    timeout = aiohttp.ClientTimeout(total=30)
+    timeout = aiohttp.ClientTimeout(total=60)
 
     # how many sockets can be open at once
     connector = aiohttp.TCPConnector(limit=10)
@@ -55,3 +55,5 @@ start = time.time()
 asyncio.run(main())
 print(responses, len(responses))
 print(f"Completed in {time.time() - start:.2f}s")
+
+# Add request count here for total requests, requests rebuilt, hit cache
