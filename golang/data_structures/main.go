@@ -75,6 +75,10 @@ func main() {
 	// Map — key-value store, like HashMap:: NOT thread safe
 	// Unordered. Key can be any comparable type (string, int, struct). Value can be anything.
 
+	// Using make() (recommended for an empty map):
+	// m := make(map[string]int)
+	// This allocates and initializes the map data structure.
+
 	ages := map[string]int{
 		"Alice": 30, "Bob": 25,
 	}
