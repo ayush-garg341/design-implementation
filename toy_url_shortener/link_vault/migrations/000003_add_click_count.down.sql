@@ -1,0 +1,2 @@
+-- DOWN
+ALTER TABLE links DROP COLUMN IF EXISTS click_count;

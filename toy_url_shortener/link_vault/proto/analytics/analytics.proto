@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package analytics;
+
+option go_package = "github.com/linkvault/gen/analytics";
+
+// ── request / response messages
+
+message GetStatsRequest{
+    string short_code = 1;
+}
+
+message GetStatsResponse{
+    string short_code = 1;
+    int64 click_count = 2;
+    string long_url = 3;
+    string user_id = 4;
+}
+
+// -- Service definition
+
+service AnalyticsService{
+    // unary — link service asks for stats for one short code
+    rpc GetStats (GetStatsRequest)    returns (GetStatsResponse);
+}
